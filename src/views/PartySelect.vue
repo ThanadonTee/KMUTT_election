@@ -24,10 +24,18 @@
       ></party-card>
 
       <p class="text-lg my-2">หรือ</p>
-      <button class="w-full bg-red-200 text-lg rounded-md py-2 mb-10" @click="noVote" v-if="!isNoVote">
+      <button
+        class="w-full bg-red-200 text-lg rounded-md py-2 mb-10"
+        @click="noVote"
+        v-if="!isNoVote"
+      >
         ไม่ประสงค์ลงคะแนน
       </button>
-      <button class="w-full bg-red-400 text-lg rounded-md py-2 mb-10" @click="noVote" v-else>
+      <button
+        class="w-full bg-red-400 text-lg rounded-md py-2 mb-10"
+        @click="noVote"
+        v-else
+      >
         ไม่ประสงค์ลงคะแนน
       </button>
       <button
@@ -49,7 +57,7 @@ export default {
   data() {
     return {
       isSelected: false,
-      isNoVote: false
+      isNoVote: false,
     };
   },
   computed: {
@@ -68,26 +76,26 @@ export default {
         this.$router.push("PartyConfirm");
       }
     },
-    noVote(){
-      this.$store.getters.getParties.forEach(party => {
+    noVote() {
+      this.$store.getters.getParties.forEach((party) => {
         this.$store.commit("partyDeSelect", party);
       });
       this.isNoVote = !this.isNoVote;
     },
-    unSelectNoVote(){
+    unSelectNoVote() {
       this.isNoVote = false;
-    }
+    },
   },
   mounted() {
     axios({
       method: "GET",
       url: this.$store.getters.getAPIPath + "/api/party/",
       headers: {
-        Authorization: this.$store.getters.getToken
+        Authorization: this.$store.getters.getToken,
       },
-    }).then((result)=>{
+    }).then((result) => {
       this.$store.commit("setParty", result.data);
-    })
+    });
   },
   components: {
     ProgressHead,

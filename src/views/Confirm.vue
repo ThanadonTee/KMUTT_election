@@ -2,8 +2,8 @@
   <div>
     <div id="header">
       <progress-head
-        :amount=5
-        :passed=1
+        :amount="5"
+        :passed="1"
         v-if="!isPrivilegesUsed"
       ></progress-head>
       <progress-head amount="5" passed="5" v-else></progress-head>
@@ -16,14 +16,14 @@
       <div v-if="!isPrivilegesUsed">
         <p>ข้อมูลของคุณถูกต้องหรือไม่</p>
         <div class="flex space-x-4 justify-center mb-3">
-          <router-link to="/sentmessage"
-            ><button
+          <router-link to="/sentmessage">
+            <button
               class="w-24 h-10 bg-gray-300 rounded-xl"
               @click="toSendMessage"
             >
               ไม่ถูกต้อง
-            </button></router-link
-          >
+            </button>
+          </router-link>
 
           <router-link to="/partyselect">
             <button

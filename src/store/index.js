@@ -46,7 +46,7 @@ export default createStore({
       },
     ],
     isAllPartySelected: false,
-    APIPath: "http://10.2.14.248:8080",
+    APIPath: "http://localhost:8080",
     token: null,
   },
   mutations: {

@@ -6,7 +6,8 @@ import PartySelect from "../views/PartySelect.vue";
 import ConfirmSelect from "../views/ConfirmSelect.vue";
 import SelectSecond from "../views/SelectSecond.vue";
 import ConfirmSelectSecond from "../views/ConfirmSelectSecond.vue";
-import Finish from "../views/Finish.vue";
+import Logout from "../views/Logout.vue";
+// import Finish from "../views/Finish.vue";
 
 const routes = [
   {
@@ -22,33 +23,33 @@ const routes = [
   {
     path: "/sentmessage",
     name: "ConfirmSentMessage",
-    component: ConfirmSentMessage
+    component: ConfirmSentMessage,
   },
   {
     path: "/partyselect",
     name: "PartySelect",
-    component: PartySelect
+    component: PartySelect,
   },
   {
     path: "/partyconfirm",
     name: "PartyConfirm",
-    component: ConfirmSelect
+    component: ConfirmSelect,
   },
   {
     path: "/selectsecond",
     name: "SelectSecond",
-    component: SelectSecond
+    component: SelectSecond,
   },
   {
     path: "/confirmselectsecond",
     name: "ConfirmSelectSecond",
-    component: ConfirmSelectSecond
+    component: ConfirmSelectSecond,
   },
   {
     path: "/finish",
     name: "Finish",
-    component: Finish
-  }
+    component: Logout,
+  },
 ];
 
 const router = createRouter({

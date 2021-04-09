@@ -1,6 +1,6 @@
 <template>
   <div>
-    <progress-head :amount=5 :passed=5></progress-head>
+    <progress-head :amount="5" :passed="5"></progress-head>
     <h1 class="text-ls font-bold">
       ยืนยันการเลือกสภานักศึกษา <br />
       {{ faculty }}
@@ -20,10 +20,17 @@
         จะไม่สามารถแก้ไขได้อีก <br />คุณจะยืนยันการเลือกหรือไม่
       </h1>
       <div class="flex justify-between mt-3">
-        <button class="w-28 bg-gray-400 rounded-lg py-1.5 px-3" @click="edit">แก้ไข</button>
-        <button class="w-28 bg-white rounded-lg py-1.5 px-3 font-extrabold" @click="submit">เสร็จสิ้น</button>
+        <button class="w-28 bg-gray-400 rounded-lg py-1.5 px-3" @click="edit">
+          แก้ไข
+        </button>
+        <button
+          class="w-28 bg-white rounded-lg py-1.5 px-3 font-extrabold"
+          @click="submit"
+        >
+          เสร็จสิ้น
+        </button>
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 
@@ -39,19 +46,19 @@ export default {
     };
   },
   methods: {
-    edit(){
+    edit() {
       this.$router.push("SelectSecond");
     },
-    submit(){
+    submit() {
       let studentCouncil = [];
-      let parties= [];
-      this.$store.getters.getConcil.forEach(student => {
+      let parties = [];
+      this.$store.getters.getConcil.forEach((student) => {
         let pushingStudent = {};
         pushingStudent.id = student.id;
         pushingStudent.choice = student.selectState;
         studentCouncil.push(pushingStudent);
       });
-      this.$store.getters.getParties.forEach(party => {
+      this.$store.getters.getParties.forEach((party) => {
         let pushingParty = {};
         pushingParty.id = party.id;
         pushingParty.choice = party.isAccept;
@@ -62,18 +69,23 @@ export default {
         method: "POST",
         url: this.$store.getters.getAPIPath + "/api/vote/",
         headers: {
-          Authorization: this.$store.getters.getToken
+          Authorization: this.$store.getters.getToken,
         },
         data: {
           council: studentCouncil,
-          party: parties
-        }
-      }).then((result)=>{
-        console.log(result);
-        this.$router.push("Finish");
+          party: parties,
+        },
       })
-      
-    }
+        .then((result) => {
+          console.log(result);
+          this.$router.push("Finish");
+        })
+        .catch((error) => {
+          const x = JSON.parse(error.response.data.message);
+          alert(x.th);
+          setTimeout(() => this.$router.push("Login"), 3000);
+        });
+    },
   },
   computed: {
     getStudents() {

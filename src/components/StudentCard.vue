@@ -1,6 +1,6 @@
 <template>
   <div class="flex bg-white p-4 rounded-lg space-x-3 justify-around">
-    <img :src="imgSrc" alt="" class="w-16 bg-white">
+    <img :src="imgSrc" alt="" class="w-16 bg-white" />
     <div class="flex flex-col h-max items-start justify-around">
       <p class="xxs:text-xs xs:text-sm font-bold">{{ student.name }}</p>
       <p class="xxs:text-xxxs xs:text-xxs font-bold">
@@ -59,29 +59,42 @@ export default {
   name: "StudentCard",
   data() {
     return {
-      imgSrc: this.$store.getters.getAPIPath+ "/api/files/" + this.student.imageId
+      imgSrc:
+        this.$store.getters.getAPIPath + "/api/files/" + this.student.imageId,
     };
   },
   methods: {
     accept() {
       this.state = 1;
-      this.$store.commit("setStudentSelectState", {student: this.student, selectState: this.state});
+      this.$store.commit("setStudentSelectState", {
+        student: this.student,
+        selectState: this.state,
+      });
     },
     decline() {
       this.state = -1;
-      this.$store.commit("setStudentSelectState", {student: this.student, selectState: this.state});
+      this.$store.commit("setStudentSelectState", {
+        student: this.student,
+        selectState: this.state,
+      });
     },
     noVote() {
       this.state = 0;
-      this.$store.commit("setStudentSelectState", {student: this.student, selectState: this.state});
+      this.$store.commit("setStudentSelectState", {
+        student: this.student,
+        selectState: this.state,
+      });
     },
     deSelect() {
       this.state = null;
-      this.$store.commit("setStudentSelectState", {student: this.student, selectState: this.state});
+      this.$store.commit("setStudentSelectState", {
+        student: this.student,
+        selectState: this.state,
+      });
     },
   },
   props: {
-    student: Object
+    student: Object,
   },
 };
 </script>
