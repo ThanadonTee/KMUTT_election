@@ -46,7 +46,7 @@ export default createStore({
       },
     ],
     isAllPartySelected: false,
-    APIPath: "http://localhost:8080",
+    APIPath: "https://election.kmutt.ac.th/api",
     token: null,
   },
   mutations: {
