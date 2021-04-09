@@ -6,7 +6,8 @@ import PartySelect from "../views/PartySelect.vue";
 import ConfirmSelect from "../views/ConfirmSelect.vue";
 import SelectSecond from "../views/SelectSecond.vue";
 import ConfirmSelectSecond from "../views/ConfirmSelectSecond.vue";
-import Finish from "../views/Finish.vue";
+import Logout from "../views/Logout.vue";
+// import Finish from "../views/Finish.vue";
 
 const routes = [
   {
@@ -47,7 +48,7 @@ const routes = [
   {
     path: "/finish",
     name: "Finish",
-    component: Finish
+    component: Logout
   }
 ];
 
