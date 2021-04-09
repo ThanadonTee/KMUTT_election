@@ -52,7 +52,7 @@
             />
           </div>
           <p class="text-danger" v-show="isWrongAuthen">
-            รหัสนักศึกษาหรือรหัสผ่านไม่ถูกต้อง
+            {{ message }}
           </p>
         </div>
         <div class="flex flex-col">
@@ -92,6 +92,7 @@ export default {
       password: null,
       username: null,
       isWrongAuthen: false,
+      message: null,
     };
   },
   methods: {
@@ -119,6 +120,8 @@ export default {
         .catch((error) => {
           if (error.response.data.status == 400) {
             this.isWrongAuthen = true;
+            const x = JSON.parse(error.response.data.message);
+            this.message = x.th;
           }
         });
     },
