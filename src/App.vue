@@ -4,7 +4,7 @@
 
 <style>
 body {
-  background-color: #FED124;
+  background-color: #fed124;
 }
 
 #app {

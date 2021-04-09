@@ -40,23 +40,22 @@
 export default {
   name: "PartyCard",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     accept() {
       if (this.getSelection == 1) {
-          this.$store.commit('partyDeSelect', this.party);
+        this.$store.commit("partyDeSelect", this.party);
       } else {
-          this.$store.commit('partyAccept', this.party);
+        this.$store.commit("partyAccept", this.party);
       }
       this.$emit("select");
     },
     decline() {
       if (this.getSelection == -1) {
-          this.$store.commit('partyDeSelect', this.party);
+        this.$store.commit("partyDeSelect", this.party);
       } else {
-          this.$store.commit('partyDecline', this.party);
+        this.$store.commit("partyDecline", this.party);
       }
       this.$emit("select");
     },
@@ -65,9 +64,9 @@ export default {
     getPartyNo() {
       return this.$store.getters.getParties.indexOf(this.party) + 1;
     },
-    getSelection(){
+    getSelection() {
       return this.party.isAccept;
-    }
+    },
   },
   props: {
     party: Object,

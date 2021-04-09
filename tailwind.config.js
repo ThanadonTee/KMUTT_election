@@ -15,7 +15,7 @@ module.exports = {
 
       danger: "#FA4616",
       main: "#FED124",
-      select: "#68DB40"
+      select: "#68DB40",
     },
     fontSize: {
       xxxs: ".5rem",
@@ -43,11 +43,11 @@ module.exports = {
       8: "8px",
     },
     screens: {
-      'xxs': '320px',
-      'xs': '335px',
+      xxs: "320px",
+      xs: "335px",
     },
-    minHeight:{
-      '72': '18rem',
+    minHeight: {
+      72: "18rem",
     },
   },
   variants: {

@@ -37,9 +37,9 @@ export default {
   },
   methods: {
     sendMessage() {},
-    back(){
+    back() {
       this.$router.push("Confirm");
-    }
+    },
   },
   computed: {
     getUser() {

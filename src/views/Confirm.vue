@@ -2,8 +2,8 @@
   <div>
     <div id="header">
       <progress-head
-        :amount=5
-        :passed=1
+        :amount="5"
+        :passed="1"
         v-if="!isPrivilegesUsed"
       ></progress-head>
       <progress-head amount="5" passed="5" v-else></progress-head>
@@ -23,7 +23,7 @@
             >
               ไม่ถูกต้อง
             </button>
-            </router-link>
+          </router-link>
 
           <router-link to="/partyselect">
             <button

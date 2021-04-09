@@ -23,33 +23,33 @@ const routes = [
   {
     path: "/sentmessage",
     name: "ConfirmSentMessage",
-    component: ConfirmSentMessage
+    component: ConfirmSentMessage,
   },
   {
     path: "/partyselect",
     name: "PartySelect",
-    component: PartySelect
+    component: PartySelect,
   },
   {
     path: "/partyconfirm",
     name: "PartyConfirm",
-    component: ConfirmSelect
+    component: ConfirmSelect,
   },
   {
     path: "/selectsecond",
     name: "SelectSecond",
-    component: SelectSecond
+    component: SelectSecond,
   },
   {
     path: "/confirmselectsecond",
     name: "ConfirmSelectSecond",
-    component: ConfirmSelectSecond
+    component: ConfirmSelectSecond,
   },
   {
     path: "/finish",
     name: "Finish",
-    component: Logout
-  }
+    component: Logout,
+  },
 ];
 
 const router = createRouter({

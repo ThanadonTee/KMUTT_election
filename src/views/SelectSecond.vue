@@ -54,7 +54,7 @@ export default {
       headers: {
         Authorization: this.$store.getters.getToken,
       },
-    }).then((result)=>{
+    }).then((result) => {
       this.$store.commit("setCouncil", result.data);
     });
   },

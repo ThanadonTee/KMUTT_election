@@ -15,7 +15,7 @@
           <h1 class="text-md">คุณเลือก</h1>
           <h1 class="text-xl">เบอร์ {{ partyNo }}</h1>
         </div>
-        <img :src="imgSrc" alt="" class="mt-3 w-4/5">
+        <img :src="imgSrc" alt="" class="mt-3 w-4/5" />
         <h1 class="text-lg my-4 font-bold">{{ partyName }}</h1>
       </div>
       <div
@@ -54,27 +54,28 @@ export default {
     return {
       partyNo: null,
       partyName: null,
-      selected: true ,
-      imgSrc: ""
+      selected: true,
+      imgSrc: "",
     };
   },
   methods: {
-    edit(){
+    edit() {
       this.$router.push("PartySelect");
     },
-    submit(){
+    submit() {
       this.$router.push("SelectSecond");
-    }
+    },
   },
-    mounted() {
+  mounted() {
     let party = this.$store.getters.getSelectedParty;
-    if(party == null){
+    if (party == null) {
       this.selected = false;
-    }else{
+    } else {
       this.selected = true;
       this.partyNo = party.id;
       this.partyName = party.name;
-      this.imgSrc = this.$store.getters.getAPIPath + "/api/files/" + party.imageId
+      this.imgSrc =
+        this.$store.getters.getAPIPath + "/api/files/" + party.imageId;
     }
   },
   components: {
