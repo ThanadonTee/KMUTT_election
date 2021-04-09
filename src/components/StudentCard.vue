@@ -22,28 +22,28 @@
           ยอมรับ
         </button>
         <button
-          class="bg-danger py-1 border border-black rounded-2xl"
+          class="bg-danger px-2 py-1 border border-black rounded-2xl"
           v-if="this.student.selectState == -1"
           @click="deSelect"
         >
           ไม่ยอมรับ
         </button>
         <button
-          class="bg-white py-1 border border-black rounded-2xl"
+          class="bg-white px-2 py-1 border border-black rounded-2xl"
           v-else
           @click="decline"
         >
           ไม่ยอมรับ
         </button>
         <button
-          class="bg-gray-400 py-1 border border-black rounded-2xl"
+          class="bg-gray-400 px-2 py-1 border border-black rounded-2xl"
           v-if="this.student.selectState == 0"
           @click="deSelect"
         >
           ไม่ออกเสียง
         </button>
         <button
-          class="bg-white py-1 border border-black rounded-2xl"
+          class="bg-white px-2 py-1 border border-black rounded-2xl"
           v-else
           @click="noVote"
         >
