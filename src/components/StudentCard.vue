@@ -1,10 +1,11 @@
 <template>
-  <div class="flex bg-white p-4 rounded-lg space-x-3 justify-around">
+  <div class="flex bg-white p-4 rounded-lg space-x-3 justify-center">
     <img :src="imgSrc" alt="" class="w-16 bg-white" />
-    <div class="flex flex-col h-max items-start justify-around">
+    <div class="flex flex-col h-max items-start justify-center">
       <p class="xxs:text-xs xs:text-sm font-bold">{{ student.name }}</p>
       <p class="xxs:text-xxxs xs:text-xxs font-bold">
-        {{ student.faculty }} ชั้นปีที่ {{ student.year }}
+        {{ student.faculty }} ชั้นปีที่
+        {{ student.year }}
       </p>
       <div class="flex xs:text-xxs xxs:text-xxxs space-x-1">
         <button

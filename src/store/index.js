@@ -110,6 +110,7 @@ export default createStore({
         newStudent.field = student.field;
         newStudent.imageId = student.imageId;
         newStudent.id = student.id;
+        newStudent.year = 64 - student.studentId.substring(0, 2);
         council.push(newStudent);
       });
       state.studentConcil = council;
