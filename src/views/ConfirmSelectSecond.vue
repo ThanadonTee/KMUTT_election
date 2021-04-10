@@ -42,7 +42,7 @@ export default {
   name: "ConfirmSelectSecond",
   data() {
     return {
-      faculty: "คณะวิศวกรรมศาสตร์",
+      faculty: this.$store.getters.getUser.faculty,
     };
   },
   methods: {

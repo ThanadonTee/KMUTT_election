@@ -31,7 +31,7 @@ export default {
   name: "SelectSecond",
   data() {
     return {
-      faculty: "คณะวิศวกรรมศาสตร์",
+      faculty: this.$store.getters.getUser.faculty,
     };
   },
   methods: {
