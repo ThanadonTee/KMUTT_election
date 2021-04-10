@@ -9,10 +9,21 @@
     <div id="body" class="w-11/12 l:w-1/2 mx-auto">
       <div
         class="bg-white rounded-3xl border-2 border-black flex flex-col items-center"
-        v-if="selected"
+        v-if="selected==1"
       >
         <div class="mt-2">
-          <h1 class="text-md">คุณเลือก</h1>
+          <h1 class="text-md">คุณยอมรับ</h1>
+          <h1 class="text-xl">เบอร์ {{ partyNo }}</h1>
+        </div>
+        <img :src="imgSrc" alt="" class="mt-3 w-4/5" />
+        <h1 class="text-lg my-4 font-bold">{{ partyName }}</h1>
+      </div>
+      <div
+        class="bg-white rounded-3xl border-2 border-black flex flex-col items-center"
+        v-else-if="selected==-1"
+      >
+        <div class="mt-2">
+          <h1 class="text-md text-danger">คุณไม่ยอมรับ</h1>
           <h1 class="text-xl">เบอร์ {{ partyNo }}</h1>
         </div>
         <img :src="imgSrc" alt="" class="mt-3 w-4/5" />
@@ -54,7 +65,7 @@ export default {
     return {
       partyNo: null,
       partyName: null,
-      selected: true,
+      selected: 1,
       imgSrc: "",
     };
   },
@@ -68,10 +79,11 @@ export default {
   },
   mounted() {
     let party = this.$store.getters.getSelectedParty;
+    // console.log(party);
     if (party == null) {
-      this.selected = false;
+      this.selected = 0;
     } else {
-      this.selected = true;
+      this.selected = party.isAccept;
       this.partyNo = party.id;
       this.partyName = party.name;
       this.imgSrc =

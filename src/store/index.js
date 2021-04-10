@@ -135,7 +135,7 @@ export default createStore({
     getSelectedParty(state) {
       let selectedParty = null;
       state.parties.forEach((party) => {
-        if (party.isAccept == 1) {
+        if (party.isAccept == 1 || party.isAccept == -1) {
           selectedParty = party;
         }
       });

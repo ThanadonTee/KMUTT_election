@@ -78,6 +78,7 @@ export default {
       if (this.isNoVote) {
         this.$router.push("PartyConfirm");
       }
+      console.log(this.$store.getters.getParties);
     },
     noVote() {
       this.$store.getters.getParties.forEach((party) => {
