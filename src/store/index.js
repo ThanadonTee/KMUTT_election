@@ -103,9 +103,9 @@ export default createStore({
     },
     setCouncil(state, payload) {
       let council = [];
-      
+
       payload.forEach((student) => {
-        if(state.user.faculty === student.faculty){
+        if (state.user.faculty === student.faculty) {
           let newStudent = {};
           newStudent.name = student.firstname + " " + student.lastname;
           newStudent.faculty = student.faculty;
@@ -115,7 +115,6 @@ export default createStore({
           newStudent.year = 64 - student.studentId.substring(0, 2);
           council.push(newStudent);
         }
-
       });
       state.studentConcil = council;
     },
@@ -145,7 +144,10 @@ export default createStore({
     isConcilAllSelected(state) {
       let result = true;
       state.studentConcil.forEach((student) => {
-       if (student.selectState == null && student.faculty == state.user.faculty) {
+        if (
+          student.selectState == null &&
+          student.faculty == state.user.faculty
+        ) {
           result = false;
         }
       });

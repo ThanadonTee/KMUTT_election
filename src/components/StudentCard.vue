@@ -1,5 +1,7 @@
 <template>
-  <div class="flex bg-white p-4 rounded-lg space-x-3 justify-between l:w-1/2 mx-auto">
+  <div
+    class="flex bg-white p-4 rounded-lg space-x-3 justify-between l:w-1/2 mx-auto"
+  >
     <img :src="imgSrc" alt="" class="w-1/4 bg-white" />
     <div class="flex flex-col h-max items-start justify-around">
       <p class="xxs:text-xs xs:text-sm font-bold">{{ student.name }}</p>
