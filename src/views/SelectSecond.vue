@@ -44,17 +44,20 @@ export default {
     },
   },
   computed: {
+    // getStudents() {
+    //   let concil = this.$store.getters.getConcil;
+    //   let user = this.$store.getters.getUser;
+    //   let NewConcil = [];
+    //   concil.forEach(e => {
+    //     if(e.faculty === user.faculty)
+    //     {
+    //       NewConcil.push(e);
+    //     }
+    //   });
+    //   return NewConcil;
+    // },
     getStudents() {
-      let concil = this.$store.getters.getConcil;
-      let user = this.$store.getters.getUser;
-      let NewConcil = [];
-      concil.forEach(e => {
-        if(e.faculty === user.faculty)
-        {
-          NewConcil.push(e);
-        }
-      });
-      return NewConcil;
+      return this.$store.getters.getConcil;
     },
   },
   mounted() {

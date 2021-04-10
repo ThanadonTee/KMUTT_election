@@ -106,14 +106,17 @@ export default createStore({
       let council = [];
       
       payload.forEach((student) => {
-        let newStudent = {};
-        newStudent.name = student.firstname + " " + student.lastname;
-        newStudent.faculty = student.faculty;
-        newStudent.field = student.field;
-        newStudent.imageId = student.imageId;
-        newStudent.id = student.id;
-        newStudent.year = 64 - student.studentId.substring(0, 2);
-        council.push(newStudent);
+        if(state.user.faculty === student.faculty){
+          let newStudent = {};
+          newStudent.name = student.firstname + " " + student.lastname;
+          newStudent.faculty = student.faculty;
+          newStudent.field = student.field;
+          newStudent.imageId = student.imageId;
+          newStudent.id = student.id;
+          newStudent.year = 64 - student.studentId.substring(0, 2);
+          council.push(newStudent);
+        }
+
       });
       state.studentConcil = council;
     },
@@ -143,7 +146,7 @@ export default createStore({
     isConcilAllSelected(state) {
       let result = true;
       state.studentConcil.forEach((student) => {
-        if (student.selectState == null) {
+       if (student.selectState == null && student.faculty == state.user.faculty) {
           result = false;
         }
       });
