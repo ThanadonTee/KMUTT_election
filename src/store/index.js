@@ -1,4 +1,3 @@
-import { get } from "core-js/core/dict";
 import { createStore } from "vuex";
 
 export default createStore({
