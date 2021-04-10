@@ -12,6 +12,7 @@
         :student="student"
         class="mb-3"
       ></student-card>
+      <p>*ระบบจะแสดงเฉพาะผู้สมัครจากคณะของท่านเท่านั้น</p>
       <button
         class="bg-gray-200 text-lg font-extrabold px-6 py-1 rounded-xl mt-3"
         @click="submit"
@@ -44,7 +45,16 @@ export default {
   },
   computed: {
     getStudents() {
-      return this.$store.getters.getConcil;
+      let concil = this.$store.getters.getConcil;
+      let user = this.$store.getters.getUser;
+      let NewConcil = [];
+      concil.forEach(e => {
+        if(e.faculty === user.faculty)
+        {
+          NewConcil.push(e);
+        }
+      });
+      return NewConcil;
     },
   },
   mounted() {

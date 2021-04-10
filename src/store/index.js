@@ -1,3 +1,4 @@
+import { get } from "core-js/core/dict";
 import { createStore } from "vuex";
 
 export default createStore({
@@ -103,6 +104,7 @@ export default createStore({
     },
     setCouncil(state, payload) {
       let council = [];
+      
       payload.forEach((student) => {
         let newStudent = {};
         newStudent.name = student.firstname + " " + student.lastname;
